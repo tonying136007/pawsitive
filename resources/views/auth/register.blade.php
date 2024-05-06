@@ -31,7 +31,7 @@
     <div class="row mb-3">
 
         <div class="col-md-6">
-            <input id="name" type="text" class="w-full px-6 py-2 form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Username">
+            <input id="name" type="text" class="w-full px-6 py-2 form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Full Name">
 
             @error('name')
                 <span class="invalid-feedback" role="alert">
@@ -57,6 +57,19 @@
     <div class="row mb-3">
 
         <div class="col-md-6">
+            <input id="username" type="text" class="w-full px-6 py-2 form-control @error('username') is-invalid @enderror" name="username" required autocomplete="username" placeholder="Username">
+
+            @error('username')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+    </div>
+
+    <div class="row mb-3">
+
+        <div class="col-md-6">
             <input id="password" type="password" class="w-full px-6 py-2 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
 
             @error('password')
@@ -71,6 +84,16 @@
 
         <div class="col-md-6">
             <input id="password-confirm" type="password" class="w-full px-6 py-2 form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+
+        <div class="col-md-6">
+            <select id="usertype" type="text" class="w-full px-6 py-2 form-control" name="usertype" required autocomplete="usertype">
+                <option value="guest">Guest</option>
+
+            </select>
         </div>
     </div>
 
