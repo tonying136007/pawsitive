@@ -1,8 +1,14 @@
 
 @extends('layouts.app')
 
-@section('content')
+@section('content') 
     <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+        <form action="{{ route('accounts.store') }}" method="POST">
+            @csrf
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add User</button>
+        </form>
+
+       
         <div class="container">
             <table class="table table-auto table-bordered" id="users-table">
                 <thead>
@@ -41,20 +47,20 @@
                         orderable: false,
                         searchable: false,
                         render: function (data, type, row) {
-                        let editUrl = row.edit_url;
-                        let deleteUrl = "{{ route('users.destroy', ':id') }}".replace(':id', row.id);
-
-                        return '<a href="' + editUrl + '" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a> ' +
-                            '<form id="deleteForm_' + row.id + '" method="POST" action="' + deleteUrl + '"> ' +
-                            '<input type="hidden" name="_token" value="{{ csrf_token() }}"> ' +
-                            '<input type="hidden" name="_method" value="DELETE"> ' +
-                            '<button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Del</button> ' +
-                            '</form>';
-                    }
-
+                            let editUrl = "{{ route('accounts.edit', ':id') }}".replace(':id', row.id);
+                            let deleteUrl = "{{ route('accounts.destroy', ':id') }}".replace(':id', row.id);
+    
+                            return '<a href="' + editUrl + '" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a> ' +
+                                '<form id="deleteForm_' + row.id + '" method="POST" action="' + deleteUrl + '"> ' +
+                                '<input type="hidden" name="_token" value="{{ csrf_token() }}"> ' +
+                                '<input type="hidden" name="_method" value="DELETE"> ' +
+                                '<button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Del</button> ' +
+                                '</form>';
+                        }
+    
                     }
                 ]
             });
         });
     </script>
-@endsection
+    @endsection
