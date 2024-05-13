@@ -16,7 +16,6 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
         'username',
         'password',
@@ -48,4 +47,5 @@ class User extends Authenticatable
     {
         return $this->belongsTo(UserType::class);
     }
+
 }

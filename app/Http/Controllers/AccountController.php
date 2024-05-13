@@ -19,7 +19,7 @@ class AccountController extends Controller
     public function usersTable(Request $request)
     {
         if ($request->ajax()) {
-            $users = User::select('id', 'name', 'email', 'username', 'user_type_id', 'created_at');
+            $users = User::select('id', 'email', 'username', 'user_type_id', 'created_at');
 
             $editUrls = [];
             $users->each(function ($user) use (&$editUrls) {
@@ -52,7 +52,6 @@ class AccountController extends Controller
     public function create(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'username' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
@@ -60,7 +59,6 @@ class AccountController extends Controller
         ]);
     
         $account = User::create([
-            'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'username' => $validatedData['username'],
             'password' => bcrypt($validatedData['password']),
@@ -80,7 +78,6 @@ class AccountController extends Controller
     public function update(User $account, Request $request)
 {
     $validatedData = $request->validate([
-        'name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255|unique:users,email,'.$account->id,
         'username' => 'required|string|max:255|unique:users,username,'.$account->id,
         'user_type_id' => 'required|integer',

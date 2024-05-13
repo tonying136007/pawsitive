@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Scheduling;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SchedController extends Controller
+class ScheduleController extends Controller
 {
     public function index()
     {

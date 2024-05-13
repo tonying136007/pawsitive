@@ -2,22 +2,21 @@
 
 @section('content') 
     <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
-        <form action="{{ route('accounts.store') }}" method="POST">
-            @csrf
-            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add User</button>
-        </form>
 
        
         <div class="container">
-            <table class="table table-auto table-bordered" id="users-table">
+            <table class="table table-auto table-bordered" id="client-table">
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Email</th>
-                        <th>Username</th>
-                        <th>User Type</th>
+                        <th>User Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Middle Name</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
                         <th>Created At</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
             </table>
@@ -29,15 +28,18 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <script>
         $(document).ready(function () {
-            $('#users-table').DataTable({
+            $('#client-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('accounts-list') }}",
+                ajax: "{{ route('clients-list') }}",
                 columns: [
                     { data: 'id', name: 'id' },
-                    { data: 'email', name: 'email' },
-                    { data: 'username', name: 'username' },
-                    { data: 'user_type_id', name: 'user_type_id' },
+                    { data: 'user_id', name: 'user_id' },
+                    { data: 'client_first_name', name: 'client_first_name' },
+                    { data: 'client_last_name', name: 'client_last_name' },
+                    { data: 'client_middle_name', name: 'client_middle_name' },
+                    { data: 'client_contact_num', name: 'client_contact_num' },
+                    { data: 'client_address', name: 'client_address' },
                     { data: 'created_at', name: 'created_at' },
                     {
                         data: 'action',
@@ -45,15 +47,13 @@
                         orderable: false,
                         searchable: false,
                         render: function (data, type, row) {
-                            let editUrl = "{{ route('accounts.edit', ':id') }}".replace(':id', row.id);
-                            let deleteUrl = "{{ route('accounts.destroy', ':id') }}".replace(':id', row.id);
+                            let editUrl = "{{ route('clients.edit', ':id') }}".replace(':id', row.id);
+                            let deleteUrl = "{{ route('clients.destroy', ':id') }}".replace(':id', row.id);
                             
     
                             return '<a href="' + editUrl + '" class="btn btn-primary">Edit</a> ' +
                                 '<form id="deleteForm_' + row.id + '" method="POST" action="' + deleteUrl + '"> ' +
                                 '<input type="hidden" name="_token" value="{{ csrf_token() }}"> ' +
-                                '<input type="hidden" name="_method" value="DELETE"> ' +
-                                '<button type="submit" class="btn btn-danger">Delete</button> ' +
                                 '</form>';
                         }
     
