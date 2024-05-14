@@ -7,7 +7,7 @@
         <form action="{{ route('accounts.store') }}" method="POST" id="account-form">
             @csrf
             <div class="mb-4">
-                <label for="email" class="block text-gray-700 text-sm ont-bold mb-2">Email</label>
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
                 <input type="email" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="email" name="email" required>
             </div>
             <div class="mb-4">
@@ -29,6 +29,28 @@
                     <option value="2">User</option>
                 </select>
             </div>
+            <div class="mb-4"><span class="text-base p-2">Personal information</span> </div>
+            <div class="mb-4">
+                <label for="client_first_name" class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
+                <input type="text" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="client_first_name" name="client_first_name" required>
+            </div>
+            <div class="mb-4">
+                <label for="client_last_name" class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
+                <input type="text" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="client_last_name" name="client_last_name" required>
+            </div>
+            <div class="mb-4">
+                <label for="client_middle_name" class="block text-gray-700 text-sm font-bold mb-2">Middle Name</label>
+                <input type="text" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="client_middle_name" name="client_middle_name" required>
+            </div>
+            <div class="mb-4">
+                <label for="client_address" class="block text-gray-700 text-sm font-bold mb-2">Address</label>
+                <input type="text" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="client_address" name="client_address" required>
+            </div>
+            <div class="mb-4">
+                <label for="client_contact_num" class="block text-gray-700 text-sm font-bold mb-2">Contact Number</label>
+                <input type="text" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="client_contact_num" name="client_contact_num" required>
+            </div>
+
             
             <button type="submit" id="add-button" class="bg-blue-500 hover:bg-blue-700 text-sm text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create Account</button>
             <button type="button" class="bg-gray-500 hover:bg-gray-700 text-sm text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" onclick="window.location.href='{{ route('accounts.index') }}'">Cancel</button>

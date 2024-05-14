@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use Yajra\DataTables\DataTables;
 
+use App\Models\Client;
+
 
 class AccountController extends Controller
 {
@@ -56,6 +58,11 @@ class AccountController extends Controller
             'username' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'user_type_id' => 'required|integer',
+            'client_first_name' => 'required|string|max:255',
+            'client_last_name' => 'required|string|max:255',
+            'client_middle_name' => 'required|string|max:255',
+            'client_address' => 'required|string|max:255',
+            'client_contact_num' => 'required|string|max:255',
         ]);
     
         $account = User::create([
@@ -64,9 +71,23 @@ class AccountController extends Controller
             'password' => bcrypt($validatedData['password']),
             'user_type_id' => $validatedData['user_type_id'],
         ]);
+
+        if ($account) {
+            $client = Client::create([
+                'client_first_name' => $validatedData['client_first_name'],
+                'client_last_name' => $validatedData['client_last_name'],
+                'client_middle_name' => $validatedData['client_middle_name'],
+                'client_address' => $validatedData['client_address'],
+                'client_contact_num' => $validatedData['client_contact_num'],
+                'user_id' => $account->id,
+            ]);
     
-        return response()->json($account);
-       
+            return response()->json(['account' => $account, 'client' => $client], 200);
+
+        } else {
+            return response()->json(['error' => 'Failed to create user'], 500);
+        }
+        
     }
 
     public function edit(User $account)
