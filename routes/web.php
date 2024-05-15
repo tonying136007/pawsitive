@@ -12,8 +12,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/schedule', [App\Http\Controllers\Scheduling\ScheduleController::class, 'index'])->name('schedule');
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/accounts', [App\Http\Controllers\AccountController::class, 'index'])->name('accounts.index');
     Route::get('/accounts-list', [App\Http\Controllers\AccountController::class, 'usersTable'])->name('accounts-list');
@@ -38,5 +36,5 @@ Route::middleware(['auth'])->group(function () {
 
     Route::delete('/clients/{client}', [App\Http\Controllers\ClientController::class, 'destroy'])->name('clients.destroy');
     
-    
+    Route::get('/schedule', \App\Http\Controllers\Schedule\ScheduleController::class)->name('schedule.index'); 
 });
