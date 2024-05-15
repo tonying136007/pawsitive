@@ -36,7 +36,8 @@ Route::middleware(['auth'])->group(function () {
     
     Route::put('/clients/{client}/update', [App\Http\Controllers\ClientController::class, 'update'])->name('clients.update');
 
-    Route::delete('/clients/{client}', [App\Http\Controllers\ClientController::class, 'destroy'])->name('clients.destroy');
+    Route::delete('/pets', [App\Http\Controllers\ClientController::class, 'destroy'])->name('pets.index');
+    
     
     
 });
