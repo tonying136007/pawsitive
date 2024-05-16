@@ -52,7 +52,7 @@
                             
     
                             return '<a href="' + editUrl + '" class="btn btn-primary">Edit</a> ' +
-                                '<form id="deleteForm_' + row.id + '" method="POST" action="' + deleteUrl + '"> ' +
+                                '<form id="deleteForm_' + row.id + '" method="POST" action="'  + '"> ' +
                                 '<input type="hidden" name="_token" value="{{ csrf_token() }}"> ' +
                                 '</form>';
                         }

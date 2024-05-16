@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Client;
-
 use Yajra\DataTables\DataTables;
 
 class ClientController extends Controller
@@ -30,8 +28,8 @@ class ClientController extends Controller
                     $editUrl = $editUrls[$client->id];
                     $deleteUrl = route('clients.destroy', $client->id);
 
-                    return '<a href="'. $editUrl. '"class="btn btn-primary">Edit</a> 
-                            <form method="POST" action="'. $deleteUrl. '"> 
+                    return '<a href="'. $editUrl. '" class="btn btn-primary">Edit</a>
+                            <form method="POST" action="'. $deleteUrl. '" style="display:inline;">
                                 @csrf 
                                 @method("DELETE") 
                                 <button type="submit" class="btn btn-danger">Delete</button> 
@@ -46,26 +44,27 @@ class ClientController extends Controller
     public function edit(Client $client)
     {
         return view('clients.edit', compact('client'));
-
     }
 
-    public function update(Client $client, Request $request)
-{
-    $validatedData = $request->validate([
-        'email' => 'required|string|email|max:255|unique:users,email,'.$client->id,
-        'username' => 'required|string|max:255|unique:users,username,'.$client->id,
-        'user_type_id' => 'required|integer',
-    ]);
+    public function update(Request $request, Client $client)
+    {
+        $validatedData = $request->validate([
+            'client_first_name' => 'required|string|max:255',
+            'client_last_name' => 'required|string|max:255',
+            'client_middle_name' => 'required|string|max:255',
+            'client_address' => 'required|string|max:255',
+            'client_contact_num' => 'required|string|max:255',
+        ]);
 
-    unset($validatedData['password']);
+        $client->update($validatedData);
 
-    $client->update($validatedData);
+        return redirect()->route('clients.index')->with('success', 'Client updated successfully.');
+    }
 
-    return redirect()->route('accounts.index')->with('success', 'Client updated successfully.');
-}
+    public function destroy(Client $client)
+    {
+        $client->delete();
 
-    
-
-    
-
+        return redirect()->route('clients.index')->with('success', 'Client deleted successfully.');
+    }
 }

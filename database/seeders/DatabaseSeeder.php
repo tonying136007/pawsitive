@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
                 UsersTableSeeder::class,
                 ClientSeeder::class,
                 ScheduleSeeder::class,
+                PetsSeeder::class,
             ]);
     
     }
