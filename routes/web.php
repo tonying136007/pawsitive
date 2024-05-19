@@ -64,5 +64,10 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/pets/{pet}/update', [App\Http\Controllers\PetController::class, 'update'])->name('pets.update');
 
     Route::post('/pets/create', [App\Http\Controllers\PetController::class, 'create'])->name('pets.create');
+
+    // Route::get('/pets/{pet}/view', [App\Http\Controllers\PetController::class, 'view'])->name('pets.view');
+
+    Route::get('/clients/{client}/pets', [App\Http\Controllers\PetController::class, 'view'])->name('pets.view');
+
     
 });

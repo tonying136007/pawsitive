@@ -32,40 +32,41 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <script>
         $(document).ready(function () {
-            $('#pet-table').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{{ route('pets-list') }}",
-                columns: [
-                    { data: 'id', name: 'id' },
-                    { data: 'client_id', name: 'client_id' },
-                    { data: 'client_full_name', name: 'client_full_name' },
-                    { data: 'pet_name', name: 'pet_name' },
-                    { data: 'pet_type', name: 'pet_type' },
-                    { data: 'pet_breed', name: 'pet_breed' },
-                    { data: 'pet_bdate', name: 'pet_bdate' },
-                    { data: 'created_at', name: 'created_at' },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false,
-                        render: function (data, type, row) {
-                            let editUrl = "{{ route('pets.edit', ':id') }}".replace(':id', row.id);
-                            let deleteUrl = "{{ route('pets.destroy', ':id') }}".replace(':id', row.id);
-                            
-    
-                            return '<a href="' + editUrl + '" class="btn btn-primary">Edit</a> ' +
-                                '<form id="deleteForm_' + row.id + '" method="POST" action="' + deleteUrl + '"> ' +
-                                '<input type="hidden" name="_token" value="{{ csrf_token() }}"> ' +
-                                '<input type="hidden" name="_method" value="DELETE"> ' +
-                                '<button type="submit" class="btn btn-danger">Delete</button> ' +
-                                '</form>';
-                        }
-    
+        $('#pet-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('pets-list') }}",
+            columns: [
+                { data: 'id', name: 'id' },
+                { data: 'client_id', name: 'client_id' },
+                { data: 'client_full_name', name: 'client_full_name' },
+                { data: 'pet_name', name: 'pet_name' },
+                { data: 'pet_type', name: 'pet_type' },
+                { data: 'pet_breed', name: 'pet_breed' },
+                { data: 'pet_bdate', name: 'pet_bdate' },
+                { data: 'created_at', name: 'created_at' },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false,
+                    searchable: false,
+                    render: function (data, type, row) {
+                        let editUrl = "{{ route('pets.edit', ':id') }}".replace(':id', row.id);
+                        let deleteUrl = "{{ route('pets.destroy', ':id') }}".replace(':id', row.id);
+                        let viewUrl = "{{ route('pets.view', ':id') }}".replace(':id', row.client_id);
+                        
+                        return '<a href="' + editUrl + '" class="btn btn-primary">Edit</a> ' +
+                            '<form id="deleteForm_' + row.id + '" method="POST" action="' + deleteUrl + '"> ' +
+                            '<input type="hidden" name="_token" value="{{ csrf_token() }}"> ' +
+                            '<input type="hidden" name="_method" value="DELETE"> ' +
+                            '<button type="submit" class="btn btn-danger">Delete</button> ' +
+                            '</form>' +
+                            '<a href="' + viewUrl + '" class="btn btn-info">View</a>'; // View button added
                     }
-                ]
-            });
+                }
+            ]
         });
+    });
+
     </script> 
 @endsection

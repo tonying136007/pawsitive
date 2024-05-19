@@ -15,6 +15,14 @@ class PetController extends Controller
         return view('pets.index');
     }
 
+    public function view(Client $client)
+    {
+        $pets = Pet::where('client_id', $client->id)->get();
+
+        return view('pets.view', compact('pets', 'client'));
+    }
+
+
     public function petTable(Request $request)
     {
         if ($request->ajax()) {
@@ -104,4 +112,5 @@ class PetController extends Controller
 
         return redirect()->route('pets.index')->with('success', 'Pet deleted successfully.');
     }
+    
 }
