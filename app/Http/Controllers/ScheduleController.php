@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Yajra\DataTables\DataTables;
+
 use Illuminate\Http\Request;
+
+use App\Models\Schedule;
 
 class ScheduleController extends Controller
 {
@@ -13,7 +17,7 @@ class ScheduleController extends Controller
 
     public function scheduleTable(Request $request){
         if ($request->ajax()) {
-            $schedules = Client::select('id', 'user_id', 'start_time', 'finish_time', 'comments', 'type', 'doctor', 'diagnosis_id', 'pet_id', 'created_at');
+            $schedules = Schedule::select('id', 'user_id', 'start_time', 'finish_time', 'comments', 'type', 'doctor', 'diagnosis_id', 'pet_id', 'created_at');
 
             $editUrls = [];
             $schedules->each(function ($schedule) use (&$editUrls) {
@@ -38,7 +42,7 @@ class ScheduleController extends Controller
         return view('schedules.index');
 
     }
-
+    
     public function __invoke()
     {
         $events = [];

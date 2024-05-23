@@ -19,8 +19,9 @@ class DatabaseSeeder extends Seeder
                 UserTypeSeeder::class, // Run the UserTypeSeeder first
                 UsersTableSeeder::class,
                 ClientSeeder::class,
-                ScheduleSeeder::class,
+                DiagnosisSeeder::class,
                 PetsSeeder::class,
+                ScheduleSeeder::class,
             ]);
     
     }

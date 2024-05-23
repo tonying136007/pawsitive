@@ -47,7 +47,19 @@ Route::middleware(['auth'])->group(function () {
 
     // SCHEDULING
     
-    Route::get('/schedule', \App\Http\Controllers\Schedule\ScheduleController::class)->name('schedule.index'); 
+    Route::get('/schedules', \App\Http\Controllers\ScheduleController::class)->name('schedules.index'); 
+
+    Route::get('/schedules-list', [App\Http\Controllers\ScheduleController::class, 'scheduleTable'])->name('schedules-list');
+
+    Route::get('/schedules/{schedule}/edit', [App\Http\Controllers\ScheduleController::class, 'edit'])->name('schedules.edit');
+    
+    Route::put('/schedules/{schedule}/update', [App\Http\Controllers\ScheduleController::class, 'update'])->name('schedules.update');
+
+    Route::delete('/schedules/{schedule}', [App\Http\Controllers\ScheduleController::class, 'destroy'])->name('schedules.destroy');
+
+    Route::post('/schedules/store', [App\Http\Controllers\ScheduleController::class, 'store'])->name('schedules.store');
+
+    Route::post('/schedules/create', [App\Http\Controllers\ScheduleController::class, 'create'])->name('schedules.create');
 
     // PET INFORMATION
 
