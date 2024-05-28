@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('doctor')->nullable();
             $table->foreignId('pet_id')->constrained('pets')->onDelete('cascade');
-            $table->foreignId('diagnosis_id')->constrained('diagnoses')->onDelete('cascade');
+            $table->foreignId('dia gnosis_id')->constrained('diagnoses')->onDelete('cascade');
             $table->timestamps();
         });
     }
