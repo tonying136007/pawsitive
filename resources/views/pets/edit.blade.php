@@ -14,7 +14,11 @@
             </div>
             <div class="mb-4">
                 <label for="pet_type" class="block text-gray-700 text-sm font-bold mb-2">Pet Type</label>
-                <input type="text" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="pet_type" name="pet_type" value="{{ $pet->pet_type }}" required>
+                <select id="pet_type" name="pet_type" class="select2 appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">
+                    <option>Select an option</option>
+                    <option value="1">Feline</option>
+                    <option value="2">Canine </option>
+                </select>
             </div>
             <div class="mb-4">
                 <label for="pet_breed" class="block text-gray-700 text-sm font-bold mb-2">Pet Breed</label>

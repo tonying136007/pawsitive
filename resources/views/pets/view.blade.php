@@ -41,7 +41,7 @@
                     <!-- Button to view the pet's full profile -->
                     <div class="flex justify-center items-end py-4 px-6">
                         <a href="{{ route('pets.view', $pet->id) }}" class="block font-semibold uppercase hover:bg-green hover:text-white no-underline text-grey-darkest">
-                            View History
+                            View Records
                         </a>
                     </div>
                 </div>
