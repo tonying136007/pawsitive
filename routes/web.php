@@ -83,5 +83,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/clients/{client}/pets', [App\Http\Controllers\PetController::class, 'view'])->name('pets.view');
 
+    Route::get('/clients/{client}/client', [App\Http\Controllers\ClientController::class, 'view'])->name('clients.view');
     
 });

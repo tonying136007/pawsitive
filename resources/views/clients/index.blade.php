@@ -49,12 +49,13 @@
                         render: function (data, type, row) {
                             let editUrl = "{{ route('clients.edit', ':id') }}".replace(':id', row.id);
                             let deleteUrl = "{{ route('clients.destroy', ':id') }}".replace(':id', row.id);
+                            let viewUrl = "{{ route('clients.view', ':id') }}".replace(':id', row.id);
                             
     
                             return '<a href="' + editUrl + '" class="btn btn-primary">Edit</a> ' +
                                 '<form id="deleteForm_' + row.id + '" method="POST" action="'  + '"> ' +
-                                '<input type="hidden" name="_token" value="{{ csrf_token() }}"> ' +
-                                '</form>';
+                                '<input type="hidden" name="_token" value="{{ csrf_token() }}"> ' + '</form>'+
+                                '<a href="' + viewUrl + '" class="btn btn-info">View</a>';
                         }
     
                     }
