@@ -13,7 +13,7 @@ class ClientController extends Controller
         return view('clients.index');
     }
 
-    public function scheduleTable(Request $request)
+    public function clientTable(Request $request)
     {
         if ($request->ajax()) {
             $clients = Client::select('id', 'user_id', 'client_first_name', 'client_last_name', 'client_middle_name', 'client_address', 'client_contact_num', 'created_at');
