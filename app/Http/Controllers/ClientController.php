@@ -10,7 +10,7 @@ class ClientController extends Controller
 {
     public function index()
     {
-        return view('schedule.index');
+        return view('clients.index');
     }
 
     public function scheduleTable(Request $request)
