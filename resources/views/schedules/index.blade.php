@@ -2,34 +2,7 @@
 
 
 @section('content')
-
-<div class="h-full ml-14 mt-14 mb-10 md:ml-64">
-        <form action="{{ route('schedules.store') }}" method="POST">
-            @csrf
-            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add User</button>
-        </form>
-
-       
-        <div class="container">
-            <table class="table table-auto table-bordered" id="schedules-table">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>User ID</th>
-                        <th>Start</th>
-                        <th>End</th>
-                        <th>Subject</th>
-                        <th>Type</th>
-                        <th>Doctor</th>
-                        <th>Diagnostic ID</th>
-                        <th>Pet ID</th>
-                        <th>Created At</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-
+<button type="button" class="bg-gray-500 hover:bg-gray-700 text-sm text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" onclick="window.location.href='{{ route('schedules.viewtable') }}'">View Schedule Table</button>
 
     
 @push('scripts')
@@ -46,6 +19,11 @@
 <div id="calendar"></div>
 
 </div>
+
+
+
+</div>
+
     @push('scripts')
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.css" rel="stylesheet" />

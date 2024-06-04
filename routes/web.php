@@ -61,6 +61,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/schedules/create', [App\Http\Controllers\ScheduleController::class, 'create'])->name('schedules.create');
 
+    Route::get('/schedules-table', [App\Http\Controllers\ScheduleController::class, 'viewSchedTable'])->name('schedules.viewtable'); 
+
     // PET INFORMATION
 
     Route::get('/pets', [App\Http\Controllers\PetController::class, 'index'])->name('pets.index');
