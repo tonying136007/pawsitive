@@ -1217,9 +1217,17 @@ margin:auto;
 <header>
 <div class="topnav" id="myTopnav">
   <a class="logo">PAWSITIVE</a>
-  <a href="#team">Sitemap</a>
+  <li>
+                        <a href{{ route('logout') }} class="flex items-center mr-4 hover:text-blue-100 dark:text-white text-gray-800 cursor-pointer hover:text-gray-600" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                </li>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
   <a href="#team">Team</a>
-  <div class="dropdown">
+  <div class="dropdown">  
     <button class="dropbtn">Services 
       <i class="fa fa-caret-down"></i>
     </button>
@@ -1238,7 +1246,16 @@ margin:auto;
 <div id="navbar">
 <div class="slide-menu">
   <a class="logo">PAWSITIVE</a>
-  <a href="#team">Sitemap</a>
+  <li>
+                        <a href{{ route('logout') }} class="flex items-center mr-4 hover:text-blue-100 dark:text-white text-gray-800 cursor-pointer hover:text-gray-600" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                      
+                            {{ __('Logout') }}
+                        </a>
+                      </li>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
   <a href="#team">Team</a>
   <div class="dropdown">
     <button class="dropbtn">Services 
