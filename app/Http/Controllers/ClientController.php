@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pet;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use Yajra\DataTables\DataTables;
@@ -11,6 +12,13 @@ class ClientController extends Controller
     public function index()
     {
         return view('clients.index');
+    }
+
+    public function view(Client $client)
+    {
+        $pets = Pet::where('client_id', $client->id)->get();
+
+        return view('clients.view', compact('pets', 'client'));
     }
 
     public function clientTable(Request $request)
