@@ -1245,8 +1245,8 @@ margin:auto;
 <div id="navbar">
 <div class="slide-menu">
   <a class="logo">PAWSITIVE</a>
-  <a href="{{ route('user-profile.index') }}">User Profile</a>
-  <a href="#team">Pet Profile</a>
+  <a href="#team">Sitemap</a>
+  <a href="#team">Team</a>
   <div class="dropdown">
     <button class="dropbtn">Services 
       <i class="fa fa-caret-down"></i>
