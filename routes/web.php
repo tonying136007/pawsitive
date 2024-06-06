@@ -54,4 +54,5 @@ Route::middleware(['admin'])->group(function () {
 
 Route::middleware(['user'])->group(function () {
     Route::get('/users', [App\Http\Controllers\UserDashboardController::class, 'index'])->name('user-dashboard.index');
+    Route::get('/users/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('user-profile.index');
 });
