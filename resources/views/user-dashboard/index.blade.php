@@ -8,7 +8,7 @@
                 <section>
                     <h5 class="sub-title">Welcome To Pawsitive Veterinary Clinic</h5>
                     <h1 class="title">Quality Care for Your Beloved Pets</h1>
-                    <p>At Pawsitive Veterinary Clinic, we provide compassionate and expert care for dogs and cats.</p>
+                    <p>where expertise meets compassion. Our devoted staff provides a comprehensive range of veterinary treatments that are specifically suited to your pet's requirements. We're dedicated to keeping your animal family members healthy and happy by providing cutting-edge facilities and a friendly environment. Trust us to be your pet-care partner.<br><br></p>
                     <a href="#sections" class="btn1">Explore More</a>
                 </section>
             </td>
@@ -145,28 +145,21 @@
     <button class="accordion">Veterinary Medicine</button>
     <div class="panel">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Veterinary medicine focuses on keeping animals healthy. Veterinarians offer check-ups, vaccinations, and operations when required. They also assist to avoid infections that can be transmitted from animals to humans. Using new technology and research, veterinarians are always discovering better ways to care for animals, whether they are pets, agricultural animals, or even wild ones. It is all about ensuring that every animal receives the care it requires to live a happy, healthy life.
         </p>
     </div>
 
     <button class="accordion">Surgical Procedures</button>
     <div class="panel">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-    </div>
-
-    <button class="accordion">Dental Care</button>
-    <div class="panel">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        During surgery, anesthetic is used to make the patient comfortable while a team of veterinarians and aids keep them safe. To treat conditions such as tumors or fractures, the surgeon makes precise incisions. Throughout operation, the patient's vital signs are continuously monitored. Afterward, patients are watched while they wake up and given pain medicine. The team collaborates to provide the finest treatment for the patient from beginning to end.
         </p>
     </div>
 
     <button class="accordion">Pet Nutrition</button>
     <div class="panel">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Good nutrition is key to keeping pets healthy and happy. They need a balanced diet with proteins, carbs, fats, vitamins, and minerals. Choose quality pet food and avoid feeding them human food. Proper nutrition helps pets grow, stay strong, and avoid health problems.
         </p>
     </div>
 

@@ -41,7 +41,7 @@ class LoginController extends Controller
             return redirect()->route('home');
         } else {
             // Handle other user types or default behavior
-            return redirect()->route('home');
+            return redirect()->route('dashboard.index');
         }
     }
 }

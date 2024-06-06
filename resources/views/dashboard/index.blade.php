@@ -6,7 +6,7 @@
 
   
               
-  {{-- <!-- Statistics Cards -->
+  <!-- Statistics Cards -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4">
     <div class="bg-orange-200 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-orange-100  dark:border-gray-600 dark:text-white text-zinc-800 font-medium group">
       <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">

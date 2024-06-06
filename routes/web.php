@@ -10,7 +10,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard.index');
 
 Route::middleware(['superadmin'])->group(function () {
 
@@ -32,6 +32,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/clients/{client}/edit', [App\Http\Controllers\ClientController::class, 'edit'])->name('clients.edit');
     Route::put('/clients/{client}/update', [App\Http\Controllers\ClientController::class, 'update'])->name('clients.update');
     Route::post('/clients/store', [App\Http\Controllers\ClientController::class, 'store'])->name('clients.store');
+    Route::post('/clients/view', [App\Http\Controllers\ClientController::class, 'view'])->name('clients.view');
 
     Route::get('/schedules', \App\Http\Controllers\ScheduleController::class)->name('schedules.index'); 
     Route::get('/schedules-list', [App\Http\Controllers\ScheduleController::class, 'scheduleTable'])->name('schedules-list');
