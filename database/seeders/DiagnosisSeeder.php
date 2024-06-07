@@ -28,6 +28,18 @@ class DiagnosisSeeder extends Seeder
                 'diag_expected_life_exp' => 2,
                 'diag_treatment' => 'Medications, surgical removal',
             ],
+            [
+                'diag_name' => 'Parvovirus',
+                'diag_type' => 'Parasitic',
+                'diag_expected_life_exp' => 2,
+                'diag_treatment' => 'Medications, surgical removal',
+            ],
+            [
+                'diag_name' => 'Distemper',
+                'diag_type' => 'Parasitic',
+                'diag_expected_life_exp' => 2,
+                'diag_treatment' => 'Medications, surgical removal',
+            ],
             // Add more diagnoses here...
         ];
 
