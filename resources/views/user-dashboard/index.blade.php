@@ -105,19 +105,8 @@
             </td>
             <td>
                 <div class="card inline-photo show-on-scroll">
-                    <div class="card_part card_part-one">
-                    </div>
-
-                    <!-- Photo 2 -->
-                    <div class="card_part card_part-two">
-                    </div>
-
-                    <!-- Photo 3 -->
-                    <div class="card_part card_part-three">
-                    </div>
-
-                    <!-- Photo 4 -->
-                    <div class="card_part card_part-four">
+                    <div class="image">
+                        <img src="https://th.bing.com/th/id/OIP.0UnyxoJIMq6CSFz72SV0FQHaKq?rs=1&pid=ImgDetMain">
                     </div>
                 </div>
             </td>
