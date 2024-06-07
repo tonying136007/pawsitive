@@ -56,4 +56,11 @@ Route::middleware(['admin'])->group(function () {
 Route::middleware(['user'])->group(function () {
     Route::get('/users', [App\Http\Controllers\UserDashboardController::class, 'index'])->name('user-dashboard.index');
     Route::get('/users/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('user-profile.index');
+    
+    // INFORMATION
+    Route::get('/users/info/medical-services', [App\Http\Controllers\InfoController::class, 'index1'])->name('user-info.index-1');
+    Route::get('/users/info/laboratory-tests', [App\Http\Controllers\InfoController::class, 'index2'])->name('user-info.index-2');
+    Route::get('/users/info/diagnostic-imaging', [App\Http\Controllers\InfoController::class, 'index3'])->name('user-info.index-3');
+    Route::get('/users/info/surgery', [App\Http\Controllers\InfoController::class, 'index4'])->name('user-info.index-4');
+    Route::get('/users/info/emergency-services', [App\Http\Controllers\InfoController::class, 'index5'])->name('user-info.index-5');
 });

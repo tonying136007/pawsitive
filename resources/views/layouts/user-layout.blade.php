@@ -1207,7 +1207,7 @@ margin:auto;
 }
 </style>
 <body>
-  <!--IF LOADER NEEDED
+  
 <body onload="myLoader()" style="margin:0;">
 <div class="loading" id="loader">
 <div class="load">
@@ -1215,7 +1215,7 @@ margin:auto;
 </div>
 </div>
 </div>
-<div style="display:none;" id="myDiv" class="animate-bottom">-->
+<div style="display:none;" id="myDiv" class="animate-bottom">
 
 
 <!--NAV-BAR-->

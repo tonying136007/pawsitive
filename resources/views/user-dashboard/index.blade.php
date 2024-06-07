@@ -27,29 +27,36 @@
         <h5 class="sub-title">Providing Comprehensive Healthcare for Pets</h5>
     </div>
     <div class="card inline-photo show-on-scroll">
-        <i class="fa fa-heartbeat"></i>
-        <h3>Medical Services</h3>
+        <a href="{{ route('user-info.index-1') }}">
+            <i class="fa fa-heartbeat"></i>
+            <h3>Medical Services</h3>
+        </a>
     </div>
     <div class="card inline-photo show-on-scroll">
-        <i class="fa fa-flask"></i>
-        <h3>Laboratory Tests</h3>
+        <a href="{{ route('user-info.index-2') }}">
+            <i class="fa fa-flask"></i>
+            <h3>Laboratory Tests</h3>
+        </a>
     </div>
     <div class="card inline-photo show-on-scroll">
-        <i class="fa fa-stethoscope"></i>
-        <h3>Diagnostic Imaging</h3>
+        <a href="{{ route('user-info.index-3') }}">
+            <i class="fa fa-stethoscope"></i>
+            <h3>Diagnostic Imaging</h3>
+        </a>
     </div>
     <div class="card inline-photo show-on-scroll">
-        <i class="fa fa-medkit"></i>
-        <h3>Surgery</h3>
+        <a href="{{ route('user-info.index-4') }}">
+            <i class="fa fa-medkit"></i>
+            <h3>Surgery</h3>
+        </a>
     </div>
     <div class="card inline-photo show-on-scroll">
-        <i class="fa fa-paw"></i>
-        <h3>Dental Care</h3>
+        <a href="{{ route('user-info.index-5') }}">
+            <i class="fa fa-user-md"></i>
+            <h3>Emergency Services</h3> 
+        </a>
     </div>
-    <div class="card inline-photo show-on-scroll">
-        <i class="fa fa-user-md"></i>
-        <h3>Emergency Services</h3>
-    </div>
+    
 </section>
 
 
