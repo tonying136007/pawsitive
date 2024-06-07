@@ -3,21 +3,20 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-
+// Route accessible to guests
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('guest');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard.index');
 
 Route::middleware(['superadmin'])->group(function () {
-
+    // Superadmin specific routes go here
 });
 
 Route::middleware(['admin'])->group(function () {
-    
     Route::get('/accounts', [App\Http\Controllers\AccountController::class, 'index'])->name('accounts.index');
     Route::get('/accounts-list', [App\Http\Controllers\AccountController::class, 'usersTable'])->name('accounts-list');
     Route::get('/accounts/{account}/edit', [App\Http\Controllers\AccountController::class, 'edit'])->name('accounts.edit');
@@ -34,7 +33,7 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/clients/store', [App\Http\Controllers\ClientController::class, 'store'])->name('clients.store');
     Route::post('/clients/view', [App\Http\Controllers\ClientController::class, 'view'])->name('clients.view');
 
-    Route::get('/schedules', \App\Http\Controllers\ScheduleController::class)->name('schedules.index'); 
+    Route::get('/schedules', [App\Http\Controllers\ScheduleController::class, 'index'])->name('schedules.index');
     Route::get('/schedules-list', [App\Http\Controllers\ScheduleController::class, 'scheduleTable'])->name('schedules-list');
     Route::get('/schedules/{schedule}/edit', [App\Http\Controllers\ScheduleController::class, 'edit'])->name('schedules.edit');
     Route::put('/schedules/{schedule}/update', [App\Http\Controllers\ScheduleController::class, 'update'])->name('schedules.update');
@@ -63,4 +62,7 @@ Route::middleware(['user'])->group(function () {
     Route::get('/users/info/diagnostic-imaging', [App\Http\Controllers\InfoController::class, 'index3'])->name('user-info.index-3');
     Route::get('/users/info/surgery', [App\Http\Controllers\InfoController::class, 'index4'])->name('user-info.index-4');
     Route::get('/users/info/emergency-services', [App\Http\Controllers\InfoController::class, 'index5'])->name('user-info.index-5');
+
+    Route::get('/users/profile/edit-password', [App\Http\Controllers\ProfileController::class, 'editPassword'])->name('user-profile.edit-password');
+
 });

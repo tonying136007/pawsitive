@@ -175,40 +175,5 @@
 
 
 <!--FOOTER-->
-<footer>
-    <div class="footer">
-        <section>
-            <p><img src="img/logo.png" alt="Pawsitive Veterinary Clinic"></p>
-            <p>
-                At Pawsitive Veterinary Clinic, we are committed to providing the best possible care for your pets.
-            </p>
-        </section>
 
-        <section>
-            <p class="title">Quick Links</p>
-            <p><a href="#">Appointment</a></p>
-            <p><a href="#">Services</a></p>
-            <p><a href="#">About Us</a></p>
-            <p><a href="#">Contact Us</a></p>
-        </section>
-
-        <section>
-            <p class="title">Contact Us</p>
-            <p><a href="#"><i class="fa fa-map-marker"></i> 123 Main Street, Cityville, ABC 12345</a></p>
-            <p><a href="#"><i class="fa fa-phone"></i> (123) 456-7890</a></p>
-            <p><a href="#"><i class="fa fa-envelope"></i> info@example.com</a></p>
-        </section>
-    </div>
-    <div class="sub-footer">
-        &copy; 2024 Pawsitive Veterinary Clinic. All Rights Reserved. | Designed By: Mahesh
-    </div>
-</footer>
-
-
-<a href="#" id="scroll-up"><i class="fa fa-angle-up"></i></a>
-</div>
-
-
-
-<div class="credits">PAWSITIVE 2024</div>
 @endsection

@@ -48,4 +48,10 @@ class User extends Authenticatable
         return $this->belongsTo(UserType::class);
     }
 
+    public function client()
+    {
+        return $this->hasOne(Client::class);
+    }
+
+
 }

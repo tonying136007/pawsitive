@@ -1,6 +1,6 @@
 
 <!--TITLE-->
-<title>WEBBAB</title>
+<title>PAWSITIVE</title>
 
 <!--ICON-->
 <link rel="shortcut icon" href="images/logo.svg">
@@ -372,7 +372,7 @@ font-size:2em;
   .slide-menu .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #4CAF50; /* Modern green color */
+    color: #d97706; /* Modern green color */
   }
   .slide-menu ul {
     display: flex;
@@ -389,12 +389,12 @@ font-size:2em;
     padding: 0;
   }
   .slide-menu a:hover {
-    background-color: #4CAF50;
+    background-color: #d97706;
     color: #fff;
     border-radius: 4px;
   }
   .slide-menu .active {
-    background-color: #4CAF50;
+    background-color: #d97706;
     color: white;
     border-radius: 4px;
   }
@@ -2627,20 +2627,22 @@ margin:auto;
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 </header> --}}
+
 <div id="navbar">
   <div class="slide-menu">
     <a class="logo">PAWSITIVE</a>
     <ul style="display: flex; align-items: center; margin: 0; padding: 0; margin-right:30px;">
       <li><a href="{{ route('user-dashboard.index') }}" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="https://codepen.io/MAHESHBYL/details/mdOmWZG">Contact</a></li>
-      <li><a href="#team">Team</a></li>
+      <li><a href="https://codepen.io/MAHESHBYL/details/mdOmWZG">User Profile</a></li>
+      <li><a href="#team">Pet Profile</a></li>
       <li class="dropdown">
         <button class="dropbtn">Services <i class="fa fa-caret-down"></i></button>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a href="#">Pet Registration</a>
+          <a href="#">Fitness Recommendantion</a>
+          <a href="#">Appointment</a>
+          <a href="#">History</a>
         </div>
       </li>
     
@@ -2660,3 +2662,36 @@ margin:auto;
 <div class="content">
   @yield('content');
 </div>
+
+
+<footer>
+  <div class="footer">
+      <section>
+          <p><img src="img/logo.png" alt="Pawsitive Veterinary Clinic"></p>
+          <p>
+              At Pawsitive Veterinary Clinic, we are committed to providing the best possible care for your pets.
+          </p>
+      </section>
+
+      <section>
+          <p class="title">Quick Links</p>
+          <p><a href="#">Appointment</a></p>
+          <p><a href="#">Services</a></p>
+          <p><a href="#">About Us</a></p>
+          <p><a href="#">Contact Us</a></p>
+      </section>
+
+      <section>
+          <p class="title">Contact Us</p>
+          <p><a href="#"><i class="fa fa-map-marker"></i> Kalentong, Santa Mesa, Manila</a></p>
+          <p><a href="#"><i class="fa fa-phone"></i> (123) 456-7890</a></p>
+          <p><a href="#"><i class="fa fa-envelope"></i>pawsitive@gmail.com</a></p>
+      </section>
+  </div>
+  <div class="sub-footer">
+      &copy; 2024 Pawsitive Veterinary Clinic. All Rights Reserved. | Designed By: Mahesh
+  </div>
+</footer>
+
+
+<a href="#" id="scroll-up"><i class="fa fa-angle-up"></i></a>

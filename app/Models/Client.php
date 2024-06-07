@@ -12,6 +12,8 @@ class Client extends Model
 {
     use HasFactory, Notifiable;
 
+    protected $table = 'clients';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -49,4 +51,6 @@ class Client extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    
 }
